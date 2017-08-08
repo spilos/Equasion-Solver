@@ -1,0 +1,48 @@
+void setup() {
+  // put your setup code here, to run once:
+
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ float a=2;
+ float b=1;
+ float c=6;
+ float d=0;//-b
+ float e=0;//b*b-4ac
+ float f=0;//b*b
+ float g=0;//4ac
+ float h=0;// négyzetgyök b*b-4ac
+ float i=0;//-b+négyzetgyök b*b-4ac
+ float j=0;//-b+négyzetgyök b*b-4ac/2a EREDMÉNY
+ float k=0;//2a
+ float l=0;//-b-négyzetgyök b*b-4ac
+ float m=0;//-b-négyzetgyök b*b-4ac/2a EREDMÉNY
+// kellő változók definiálása (a,b,c a bejövő adat, d-k a számítás során lesz használva
+
+d=b*-1;
+f=sq(b);
+g=4*a*c;
+e=f-g;
+if( e<0)
+{Serial.println("AZ egyenletnek nincs megoldása");
+  while(1) { }
+  }
+else
+{  
+h=sqrt(e);
+i=d+h;
+k=2*a;
+j=i/k;
+l=d-h;
+m=l/k;
+Serial.println(j);
+Serial.println(m);
+while(1) { };
+}
+
+
+
+
+}
